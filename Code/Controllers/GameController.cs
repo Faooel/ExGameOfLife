@@ -1,30 +1,46 @@
 using GameOfLife.Logic;
 using GameOfLife.Data;
+using System;
 
-namespace GameOfLife.Controllers {
-    public class GameController {
-        private GameEngine _engine;
-        private GameRepository _repo = GameRepository.Instance;
-        public GameController(GameEngine engine) {
-            _engine = engine; 
+namespace GameOfLife.Controllers 
+{
+    public class GameController 
+    {
+        private GameEngine _leMoteur; 
+        private GameRepository _leRepo = GameRepository.Instance;
+
+        public GameController(GameEngine engine) 
+        {
+            _leMoteur = engine; 
         }
 
-        public void Step() {
-            _engine.NextGeneration();
+        public void Step() 
+        {
+            _leMoteur.NextGeneration();
         }
 
-        public void Save() {
-            // Simulation transformation de la grille
-            string data = "";
-            for (int x = 0; x < _engine.Width; x++) {
-                for (int y = 0; y < _engine.Height; y++) {
-                    // 1 pour vivant, 0 pour mort
-                    data += _engine.Grid[x, y].IsAlive ? "1" : "0";
+        public void Save() 
+        {
+            string chaine_data = ""; 
+            
+            for (int x = 0; x < _leMoteur.Width; x++) 
+            {
+                for (int y = 0; y < _leMoteur.Height; y++) 
+                {
+                    // 1 vivant, 0 mort
+                    if (_leMoteur.Grid[x, y].IsAlive() == true) 
+                    {
+                        chaine_data += "1";
+                    }
+                    else 
+                    {
+                        chaine_data += "0";
+                    }
                 }
-                data += "|"; 
+                chaine_data += "|"; 
             }
             
-            _repo.SaveState(data); 
+            _leRepo.SaveState(chaine_data); 
         }
     }
 }

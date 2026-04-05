@@ -7,7 +7,7 @@ using GameOfLife.Controllers;
 
 namespace GameOfLife.Views {
     public partial class MainWindow : Window {
-        private GameController _control; // Nom plus court
+        private GameController _control; 
         private GameOfLife.Logic.GameEngine _moteur; 
         private Canvas _zoneDessin = new Canvas();
         private int _tailleCarre = 15;
@@ -78,7 +78,8 @@ namespace GameOfLife.Views {
                     r.Width = _tailleCarre - 1;
                     r.Height = _tailleCarre - 1;
                     
-                    if (_moteur.Grid[i, j].IsAlive == true) {
+                    // CORRECTION ICI : Ajout des parenthèses IsAlive()
+                    if (_moteur.Grid[i, j].IsAlive() == true) {
                         r.Fill = Brushes.Black;
                     } else {
                         r.Fill = Brushes.WhiteSmoke;

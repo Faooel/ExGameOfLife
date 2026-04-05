@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GameOfLife.Logic 
 {
-    // moteur du jeua
+    // moteur du jeu
     public class GameEngine 
     {
         public Cell[,] Grid { get; private set; }

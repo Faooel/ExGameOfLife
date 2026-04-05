@@ -1,11 +1,12 @@
 using System;
-using System.Collections.Generic;
+using System.Text;
 
 namespace GameOfLife.Logic 
 {
-    // interface les differentes variantes
+    // interface pour les differentes variantes
     public interface ILifeRule 
     {
-        bool WillBeAlive(bool vivant, int nb_v);
+        // methode qui renvoie si survit ou pas
+        bool WillBeAlive(bool b_v, int nb_v);
     }
 }

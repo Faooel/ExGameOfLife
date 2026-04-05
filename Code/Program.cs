@@ -3,27 +3,31 @@ using System.Windows;
 using GameOfLife.Views;
 using GameOfLife.Controllers;
 using GameOfLife.Logic;
+using GameOfLife.Models;
 
 namespace GameOfLife
 {
     public class Program
     {
-        [STAThread] // DOIT ÊTRE ICI
+        [STAThread]
         public static void Main()
         {
-            Application app = new Application();
+            // lancement de l'app 
+            Application monApp = new Application();
             
-            // Initialisation logique
-            StandardRule rule = new StandardRule();
-            GameEngine engine = new GameEngine(20, 20, rule);
-            GameController controller = new GameController(engine);
+            var leMoteur = new GameEngine(20, 20);
+            var leControl = new GameController(leMoteur);
             
-            // Initialisation vue
-            MainWindow window = new MainWindow(controller, engine);
-            engine.Grid[5, 5].IsAlive = true;
-            engine.Grid[5, 6].IsAlive = true;
-            engine.Grid[5, 7].IsAlive = true;
-            app.Run(window);
+            CellFactory fab = new CellFactory();
+
+            // setup 'dun petit blinker pour test
+            leMoteur.Grid[5, 5] = fab.CreateCell(5, 5, true);
+            leMoteur.Grid[5, 6] = fab.CreateCell(5, 6, true);
+            leMoteur.Grid[5, 7] = fab.CreateCell(5, 7, true);
+            
+            MainWindow fenetrePrincipale = new MainWindow(leControl, leMoteur);
+            
+            monApp.Run(fenetrePrincipale);
         }
     }
 }
