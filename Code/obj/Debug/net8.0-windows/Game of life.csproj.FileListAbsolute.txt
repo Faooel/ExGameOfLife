@@ -51,6 +51,7 @@ C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.AssemblyInfoInputs.cache
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.AssemblyInfo.cs
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.csproj.CoreCompileInputs.cache
+C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.sourcelink.json
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of .2A40238E.Up2Date
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\Game of life.dll
 C:\Users\faooel\Desktop\Game of life\Code\obj\Debug\net8.0-windows\refint\Game of life.dll

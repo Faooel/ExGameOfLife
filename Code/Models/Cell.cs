@@ -1,7 +1,10 @@
 namespace GameOfLife.Models {
-    public class Cell {
+    public abstract class Cell {
         public int X { get; set; }
         public int Y { get; set; }
-        public bool IsAlive { get; set; } // [cite: 7]
+
+        // Méthodes imposées par l'UML
+        public abstract bool IsAlive();
+        public abstract Cell NextState(int nbVoisins);
     }
 }

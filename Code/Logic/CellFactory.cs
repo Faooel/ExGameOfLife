@@ -2,16 +2,9 @@ using GameOfLife.Models;
 
 namespace GameOfLife.Logic {
     public class CellFactory {
-        // fabriquer une cellule
-        public Cell CreateCell(int coordX, int coordY, bool estVivante) {
-            // créer une cell
-            var nouvelleCellule = new Cell();
-            
-            nouvelleCellule.X = coordX;
-            nouvelleCellule.Y = coordY;
-            nouvelleCellule.IsAlive = estVivante;
-
-            return nouvelleCellule;
+        public Cell CreateCell(int x, int y, bool vivant) {
+            if (vivant) return new AliveCell { X = x, Y = y };
+            return new DeadCell { X = x, Y = y };
         }
     }
 }
